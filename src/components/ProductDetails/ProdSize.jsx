@@ -13,7 +13,7 @@ function ProdSize ({ sizes }) {
             <div
               key={idx}
               className={`border border-gray-400 rounded-md hover:scale-95 p-2 w-20 text-center bg-white cursor-pointer ${
-                activeIdx === idx ? ' shadow-4xl  bg-pink-400 text-white border-black' : 'border'
+                activeIdx === idx ? ' shadow-4xl  bg-green-400 text-white border-black' : 'border'
               } `}
               onClick={() => setActiveIdx(idx)}
             >
