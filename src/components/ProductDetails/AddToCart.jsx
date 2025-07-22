@@ -4,7 +4,7 @@ import { addToCart, removeToCart } from '../../store/Features/CartSlice'
 import { useState, useEffect } from 'react'
 
 function AddToCart ({ product,disabled }) {
-    console.log(product)
+    
 
 
   const cartItems = useSelector(state => state.cartStore.items)
@@ -12,29 +12,26 @@ function AddToCart ({ product,disabled }) {
   const dispatch = useDispatch()
 
   const isInCart = cartItems.some(item => item.id === product.id)
-  const [isToggle,setIsToggle] = useState(isInCart)
 
 
   useEffect(()=>{
-    console.log(disabled)
+   
   },[disabled])
   
+  console.log(cartItems)
 
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
   }, [cartItems])
 
   function AddToCartHandler () {
-    if (!isInCart) {
- // Create a new product object with selectedColor property
-    const productWithSelectedColor = {
-      ...product,
-      selectedColor: product.selectedColor
-    }
-    dispatch(addToCart(productWithSelectedColor))
+    if (!isInCart && product.selectedColor != undefined && product.selectedSize != undefined) {
+ // Create a new product object with selectedColor and SelectedSize property
+    
+    dispatch(addToCart(product))
     } else {
       dispatch(removeToCart(product.id))
-      setIsToggle(false)
+     
     }
   }
 
