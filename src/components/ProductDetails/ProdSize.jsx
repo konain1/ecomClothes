@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function ProdSize ({ sizes }) {
+function ProdSize ({ sizes, setSelectedSizeIdx, selectedSizeIdx }) {
   const [activeIdx, setActiveIdx] = useState(null)
   return (
     <>
@@ -13,9 +13,9 @@ function ProdSize ({ sizes }) {
             <div
               key={idx}
               className={`border border-gray-400 rounded-md hover:scale-95 p-2 w-20 text-center bg-white cursor-pointer ${
-                activeIdx === idx ? ' shadow-4xl  bg-green-400 text-white border-black' : 'border'
+                activeIdx === idx ? ' shadow-4xl  bg-green-400 text-purple-500 font-bold border-black' : 'border'
               } `}
-              onClick={() => setActiveIdx(idx)}
+              onClick={() => setSelectedSizeIdx(idx)}
             >
               {size}
             </div>

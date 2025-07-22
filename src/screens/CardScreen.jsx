@@ -19,9 +19,9 @@ function CardScreen () {
       {/* Responsive grid for displaying product cards */}
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-10 justify-evenly'>
         {/* Loop through cards array and render each product card */}
-        {cards.map(card => (
+        {cards.map((card,index) => (
           // Card container with click handler for navigation
-          <div
+          <div key={index}
             onClick={() => handleProductNavigate(card.id)}
             className='max-w-sm text-center hover:shadow-orange-400 hover:scale-105 justify-between bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700'
           >
@@ -56,7 +56,7 @@ function CardScreen () {
                   <span>&#8377;</span> {card.price}
                 </button>
                 {/* RatingStars component displays product rating */}
-                <RatingStars rating={card.rating} />
+                <RatingStars  rating={card.rating} />
               </div>
             </div>
           </div>

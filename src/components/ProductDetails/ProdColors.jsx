@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-function ProdColors ({ colors }) {
-  const [activeIdx, setActiveIdx] = useState(null)
+function ProdColors ({ colors,selectedColorIdx,setSelectedColorIdx }) {
+  
   return (
     <div>
       <p className='mb-5'>Colors</p>
@@ -10,10 +10,10 @@ function ProdColors ({ colors }) {
           <span
             key={idx}
             className={`h-10 w-10  rounded-full cursor-pointer hover:scale-95 ${
-              activeIdx === idx ? 'border-2 border-gray-400 scale-105 shadow-xl' : ' h-8 w-8 '
+              selectedColorIdx === idx ? 'border-2 border-gray-400 scale-105 shadow-xl' : ' h-8 w-8 '
             }`}
             style={{ backgroundColor: color }}
-            onClick={() => setActiveIdx(idx)}
+            onClick={() => setSelectedColorIdx(idx)}
           ></span>
         ))}
       </div>
