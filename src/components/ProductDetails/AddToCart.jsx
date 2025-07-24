@@ -2,56 +2,59 @@ import Btn from './Btn'
 import { useSelector, useDispatch } from 'react-redux'
 import { addToCart, removeToCart } from '../../store/Features/CartSlice'
 import { useState, useEffect } from 'react'
-
-function AddToCart ({ product,disabled }) {
-    
+  import { ToastContainer, toast } from 'react-toastify';
 
 
+function AddToCart ({ product, disabled }) {
   const cartItems = useSelector(state => state.cartStore.items)
-  
   const dispatch = useDispatch()
 
   const isInCart = cartItems.some(item => item.id === product.id)
-
-
-  useEffect(()=>{
-   
-  },[disabled])
+  const cartItem = cartItems.find((item)=>item.id === product.id )
+  const quantity = cartItem ? cartItem.quantity : 0
   
-  console.log(cartItems)
 
-  useEffect(() => {
-    localStorage.setItem('cartItems', JSON.stringify(cartItems))
-  }, [cartItems])
+  useEffect(() => {}, [disabled])
+
+  //   useEffect(() => {
+  //     localStorage.setItem('cartItems', JSON.stringify(cartItems))
+  //   }, [cartItems])
 
   function AddToCartHandler () {
-    if (!isInCart && product.selectedColor != undefined && product.selectedSize != undefined) {
- // Create a new product object with selectedColor and SelectedSize property
-    
-    dispatch(addToCart(product))
+    if (
+      !isInCart &&
+      product.selectedColor != undefined &&
+      product.selectedSize != undefined
+    ) {
+      // Create a new product object with selectedColor and SelectedSize property
+      dispatch(addToCart(product))
+      toast.success(`${product.title} added to cart successfully!`,)
     } else {
-      dispatch(removeToCart(product.id))
-     
+      dispatch(removeToCart({id:product.id}))
+      toast.error(`${product.title} removed from cart`,)
     }
   }
 
-return (
+  return (
     <div className='flex justify-center'>
       {isInCart ? (
         <Btn
-          title="Remove"
+          title='Remove'
           onPress={AddToCartHandler}
-          style="px-4 rounded-lg md:w-[80%] md:py-2 border bg-red-500 active:scale-95 md:rounded-full hover:bg-red-700 hover:text-white text-white"
+          style='px-4 rounded-lg md:w-[80%] md:py-2 border bg-red-500 active:scale-95 md:rounded-full hover:bg-red-700 hover:text-white text-white'
         />
       ) : disabled ? (
-        <span className="text-gray-500 text-sm">Select color and size first</span>
+        <span className='text-gray-500 text-sm'>
+          Select color and size first
+        </span>
       ) : (
         <Btn
-          title="Add to cart"
+          title='Add to cart'
           onPress={AddToCartHandler}
-          style="px-4 rounded-lg md:w-[80%] md:py-2 border bg-amber-300 active:scale-95 md:rounded-full hover:bg-amber-500 hover:text-white"
+          style='px-4 rounded-lg md:w-[80%] md:py-2 border bg-amber-300 active:scale-95 md:rounded-full hover:bg-amber-500 hover:text-white'
         />
       )}
+       <ToastContainer />
     </div>
   )
 }

@@ -6,6 +6,7 @@ import ProdDesc from './ProdDesc'
 import ProdPrice from './ProdPrice'
 import ProdSize from './ProdSize'
 import ProductTitle from './ProductTitle'
+import Navbar from '../Navbar'
 
 function ProductDetailsPage ({ product }) {
   const [selectedColorIdx, setSelectedColorIdx] = useState(null)
@@ -17,7 +18,6 @@ function ProductDetailsPage ({ product }) {
 
   useEffect(()=>{
 
-    console.log(isAddToCartDisabled)
     if(isAddToCartDisabled != null){
         setSizeAndColor(true)
     }
@@ -50,7 +50,7 @@ function ProductDetailsPage ({ product }) {
               setSelectedSizeIdx={setSelectedSizeIdx}
             />
           ) : (
-                    <span className="text-gray-500 text-sm">Select color size will appear</span>
+        <span className="text-gray-500 text-sm">Select color size will appear</span>
 
           )}
         </div>

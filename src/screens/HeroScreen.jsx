@@ -1,7 +1,6 @@
 import Navbar from "../components/Navbar"
 import Strip from "../components/Strip"
 import CardScreen from "./CardScreen"
-import CartStackScreen from "./CartStackScreen"
 
 
 function HeroScreen(){
@@ -11,7 +10,7 @@ function HeroScreen(){
         <Navbar />
         <Strip season={"summer"}/>
         <CardScreen/>
-        <CartStackScreen />
+        
         
 
         </div>

@@ -9,7 +9,8 @@ export const cards = [
     rating: 4.5,
     sizes: ["S", "M", "L", "XL"],
     colors: ["#FFFFFF", "#1E3A8A", "#000000"], // White, Blue, Black
-    category: "Shirts"
+    category: "Shirts",
+    quantity: 0
   },
   {
     id: 2,
@@ -21,7 +22,8 @@ export const cards = [
     rating: 4.7,
     sizes: ["S", "M", "L"],
     colors: ["#1E40AF", "#000000"], // Blue, Black
-    category: "Jackets"
+    category: "Jackets",
+    quantity: 0
   },
   {
     id: 3,
@@ -33,7 +35,8 @@ export const cards = [
     rating: 4.3,
     sizes: ["S", "M", "L"],
     colors: ["#EF4444", "#FACC15", "#22C55E"], // Red, Yellow, Green
-    category: "Dresses"
+    category: "Dresses",
+    quantity: 0
   },
   {
     id: 4,
@@ -45,7 +48,8 @@ export const cards = [
     rating: 4.8,
     sizes: ["7", "8", "9", "10", "11"],
     colors: ["#8B5C2D", "#000000"], // Brown, Black
-    category: "Footwear"
+    category: "Footwear",
+    quantity: 0
   },
   {
     id: 5,
@@ -57,7 +61,8 @@ export const cards = [
     rating: 4.2,
     sizes: ["S", "M", "L", "XL"],
     colors: ["#FFFFFF", "#6B7280", "#000000"], // White, Grey, Black
-    category: "T-Shirts"
+    category: "T-Shirts",
+    quantity: 0
   },
   {
     id: 6,
@@ -69,7 +74,8 @@ export const cards = [
     rating: 4.6,
     sizes: ["M", "L", "XL"],
     colors: ["#1E293B", "#000000"], // Navy, Black
-    category: "Blazers"
+    category: "Blazers",
+    quantity: 0
   },
   {
     id: 7,
@@ -81,7 +87,8 @@ export const cards = [
     rating: 4.4,
     sizes: ["7", "8", "9", "10"],
     colors: ["#FFFFFF", "#000000", "#EF4444"], // White, Black, Red
-    category: "Footwear"
+    category: "Footwear",
+    quantity: 0
   },
   {
     id: 8,
@@ -93,7 +100,8 @@ export const cards = [
     rating: 4.1,
     sizes: ["One Size"],
     colors: ["#6B7280", "#EF4444", "#3B82F6"], // Grey, Red, Blue
-    category: "Accessories"
+    category: "Accessories",
+    quantity: 0
   },
   {
     id: 9,
@@ -105,7 +113,8 @@ export const cards = [
     rating: 4.3,
     sizes: ["S", "M", "L", "XL"],
     colors: ["#F5F5DC", "#1E293B", "#000000"], // Beige, Navy, Black
-    category: "Pants"
+    category: "Pants",
+    quantity: 0
   },
   {
     id: 10,
@@ -117,6 +126,7 @@ export const cards = [
     rating: 4.0,
     sizes: ["One Size"],
     colors: ["#F5F5DC", "#FFFFFF"], // Beige, White
-    category: "Accessories"
+    category: "Accessories",
+    quantity: 0
   }
 ];
